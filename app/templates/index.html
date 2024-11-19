@@ -40,7 +40,10 @@
     <h1>Request Queue</h1>
     <ul>
         {% for item in queue %}
-        <li>{{ item.title }} ({{ item.type }})</li>
+        <li>
+            <img src="https://image.tmdb.org/t/p/w200{{ item.poster_path }}" alt="{{ item.title }} poster">
+            {{ item.title }} ({{ item.type }})
+        </li>
         {% endfor %}
     </ul>
     <a href="{{ url_for('main.search') }}">Search for a Movie or TV Show</a>
