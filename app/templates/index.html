@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plex Reqs</title>
+</head>
+<body>
+    <h1>Request Queue</h1>
+    <ul>
+        {% for item in queue %}
+        <li>{{ item.title }} ({{ item.type }})</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('main.search') }}">Search for a Movie or TV Show</a>
+</body>
+</html>

@@ -1,0 +1,35 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Environment variables and secret files
+.env
+
+# Flask cache and session files
+instance/
+*.sqlite3
+
+# Docker
+*.log
+*.pid
+*.swp
+docker-compose.override.yml
+.docker/
+
+# Virtual environments
+venv/
+.env/
+env/
+
+# VS Code and other IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# macOS and system files
+.DS_Store
+Thumbs.db
+

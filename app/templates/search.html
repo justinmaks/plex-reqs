@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+    <h1>Search for a Movie or TV Show</h1>
+    <form method="POST" action="{{ url_for('main.search') }}">
+        <input type="text" name="query" placeholder="Enter title" required>
+        <button type="submit">Search</button>
+    </form>
+    <ul>
+        {% for result in results %}
+        <li>
+            {{ result.name or result.title }}
+            <form action="{{ url_for('main.add') }}" method="POST" style="display:inline;">
+                <input type="hidden" name="title" value="{{ result.name or result.title }}">
+                <input type="hidden" name="tmdb_id" value="{{ result.id }}">
+                <input type="hidden" name="media_type" value="{{ result.media_type }}">
+                <button type="submit">Add to Queue</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
