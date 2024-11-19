@@ -29,9 +29,10 @@ def add():
     title = request.form.get('title')
     tmdb_id = request.form.get('tmdb_id')
     media_type = request.form.get('media_type')
+    poster_path = request.form.get('poster_path')  # Get poster path from form
 
     if title and tmdb_id and media_type:
-        new_request = Request(title=title, type=media_type, tmdb_id=tmdb_id)
+        new_request = Request(title=title, type=media_type, tmdb_id=tmdb_id, poster_path=poster_path)
         db.session.add(new_request)
         db.session.commit()
     return redirect(url_for('main.index'))
